@@ -19,6 +19,7 @@ class imageSlider extends StatelessWidget {
       width: double.infinity,
       height: 300,
       child: CarouselSlider(
+
         items: images.map((imagePath) {
           return Image.asset(
             imagePath,
@@ -26,10 +27,16 @@ class imageSlider extends StatelessWidget {
           );
         }).toList(),
         options: CarouselOptions(
+
             autoPlay: true,
+
             autoPlayInterval: Duration(seconds: 2),
             aspectRatio: 16 / 9,
-            enlargeCenterPage: true
+            enlargeCenterPage: true,
+
+
+
+
         ),
       ),);
   }
