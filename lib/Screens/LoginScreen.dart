@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:loginpage/Screens/SecondScreen.dart';
-import 'SecondScreen.dart';
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+import 'package:loginpage/Screens/HomeScreen.dart';
+import 'HomeScreen.dart';
+// this is the loginscreen or the first screen where the user enters
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+// this container holds the background gradient of the loginscreen
       body: Container(
 
         decoration: BoxDecoration(
@@ -22,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
           ),
         ),
 
-
+ //this Column includes an array of circle avatar and a container that has textfileds of user login and password
       child:Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -52,6 +53,7 @@ class WelcomeScreen extends StatelessWidget {
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 70,),
+            //this container has information about the login address of user and password
             child:Container(
                 width: 50,
                 height: 450,
@@ -126,6 +128,7 @@ class WelcomeScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 30),
                         child: InkWell(
+                          // on pressing this text the user will redirect it to signup screen
                           onTap: (){
                             Navigator.pushNamed(context, '/signUpScreen');
                           },

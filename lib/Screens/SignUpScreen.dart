@@ -1,8 +1,8 @@
-import 'dart:html';
+
 
 import 'package:flutter/material.dart';
-import 'package:loginpage/Screens/SecondScreen.dart';
-import 'SecondScreen.dart';
+import 'package:loginpage/Screens/HomeScreen.dart';
+import 'HomeScreen.dart';
 import 'package:loginpage/widgets/MyDrawerHeader.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -16,7 +16,6 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   late String _name;
   late String _enrollmentNo;
-  late File? selectedImage;
 
   void updateDrawerHeader(String name, String enrollmentNo) {
     setState(() {
@@ -28,6 +27,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //this container includes the =background gradient of the screen
         body: Container(
       decoration: BoxDecoration(
         gradient: RadialGradient(
@@ -40,7 +40,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           stops: [
             0.17,
             0.78
-          ], // Corresponding to the percentages in the CSS code
+          ],
         ),
       ),
       child: Column(

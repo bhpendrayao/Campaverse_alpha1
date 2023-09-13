@@ -4,20 +4,18 @@ import 'package:loginpage/widgets/ListViewHorizontal.dart';
 import 'package:loginpage/widgets/MyDrawerHeader.dart';
 import 'package:loginpage/widgets/icons.dart';
 
-class SecondScreen extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   void _updateDrawerHeader(String name, String enrollmentNo) {
-
   }
-  const SecondScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-
       drawer:Expanded(
         child: SingleChildScrollView(
           child: Container(
+            //this container has the background gradient of drawer
 
             width: MediaQuery.of(context).size.width * 0.6,
             decoration: BoxDecoration(
@@ -36,7 +34,9 @@ class SecondScreen extends StatelessWidget {
 
                 child: Column(
                   children: [
+                    //my drawerheader would redirect you to a container where there is image of user and name and enrollment no
                     MyDrawerHeader(updateDrawerHeader:_updateDrawerHeader),
+                    //Drawer list has al the notifications ad list of the things
                     DrawerList(),
                   ],
                 ),
@@ -58,7 +58,6 @@ class SecondScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-
       body: Container(
         decoration: BoxDecoration(
           gradient: RadialGradient(
