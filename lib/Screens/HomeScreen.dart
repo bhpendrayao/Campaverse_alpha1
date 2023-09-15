@@ -11,13 +11,13 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double sheight=MediaQuery.of(context).size.height;
     return Scaffold(
       drawer:Expanded(
         child: SingleChildScrollView(
           child: Container(
             //this container has the background gradient of drawer
-
-            width: MediaQuery.of(context).size.width * 0.6,
+            width: MediaQuery.of(context).size.width * 0.8,
             decoration: BoxDecoration(
               gradient: RadialGradient(
                 center: Alignment.center,
@@ -29,9 +29,9 @@ class HomeScreen extends StatelessWidget {
                 stops: [0.17, 0.78], // Corresponding to the percentages in the CSS code
               ),
             ),
-            child: SingleChildScrollView(
-              child: Container(
-
+            child: Container(
+              height: sheight,
+              child: SingleChildScrollView(
                 child: Column(
                   children: [
                     //my drawerheader would redirect you to a container where there is image of user and name and enrollment no
@@ -58,30 +58,26 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: RadialGradient(
-              center: Alignment.center,
-              radius: 0.9,
-              colors: [
-                Color.fromRGBO(241, 36, 85, 1),
-                Color.fromRGBO(9, 15, 21, 1),
-              ],
-              stops: [0.17, 0.78], // Corresponding to the percentages in the CSS code
-            ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: RadialGradient(
+            center: Alignment.center,
+            radius: 0.9, // Radius of 1.0 makes it circular
+            colors: [
+              Color.fromRGBO(241, 36, 85, 1),
+              Color.fromRGBO(9, 15, 21, 1),
+            ],
+            stops: [0.17, 0.78], // Corresponding to the percentages in the CSS code
           ),
-
-
-         child: Container(
-           child: Column(
-             children: [
-
-
-               Padding(
-                 padding: const EdgeInsets.all(50),
-                 child: Padding(
-                   padding: const EdgeInsets.all(12.0),
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Container(
+             child: Column(
+               mainAxisAlignment: MainAxisAlignment.start,
+               children: [
+                 Padding(
+                   padding: const EdgeInsets.only(bottom: 12.0,left: 30,right: 30),
                    child: Container(width: double.infinity,
                      height: 230,
                      decoration: BoxDecoration(
@@ -97,51 +93,56 @@ class HomeScreen extends StatelessWidget {
                          ),
                        ],
                      ),
-                     child: Column(
-                       children: [Padding(
-                         padding: const EdgeInsets.only(top: 30,bottom: 10),
-                         child: Row(
-                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                           children: [
-
-                             IconsPage(IconButton: IconButton(icon:Icon( Icons.event_note_outlined,color: Colors.white,), onPressed: (){},iconSize: 30,), IconName:"NoticeBoard"),
-                             IconsPage(IconButton: IconButton(icon:Icon( Icons.people_alt,color: Colors.white), onPressed: (){
-                               Navigator.pushNamed(context, '/vnitclubs');
-                             },iconSize: 30,), IconName:"Clubs"),
-                             IconsPage(IconButton: IconButton(icon:Icon( Icons.shopping_bag_outlined,color: Colors.white), onPressed: (){},iconSize: 30,), IconName:"TnP")
-
-
-                           ],
-                         ),
-                       ),
-                         Padding(
-                           padding: const EdgeInsets.only(top: 30,bottom: 10,left: 15),
+                     child: SingleChildScrollView(
+                       child: Column(
+                         children: [
+                           Padding(
+                           padding: const EdgeInsets.only(top: 30,bottom: 10),
                            child: Row(
                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                              children: [
-                               IconsPage(IconButton: IconButton(icon:Icon( Icons.book_online_outlined,color: Colors.white), onPressed: (){
 
-
-                               },iconSize: 30,), IconName : "Bookings"),
-                               IconsPage(IconButton: IconButton(icon:Icon( Icons.miscellaneous_services,color: Colors.white), onPressed: (){
-
-                               },iconSize: 30,), IconName:"Services",) ,
-                               IconsPage(IconButton: IconButton(icon:Icon( Icons.school_outlined,color: Colors.white), onPressed: (){},iconSize: 30,), IconName:"Academic Section")
+                               SingleChildScrollView(child:IconButton(icon:Icon( Icons.event_note_outlined,color: Colors.white,), onPressed: (){},iconSize: 45,),),
+                               SingleChildScrollView(
+                                 child:IconButton(icon:Icon( Icons.people_alt,color: Colors.white), onPressed: (){
+                                   Navigator.pushNamed(context, '/vnitclubs');
+                                 },iconSize: 45,),),
+                                 SingleChildScrollView(child:IconButton(icon:Icon( Icons.shopping_bag_outlined,color: Colors.white), onPressed: (){},iconSize: 45,),),
 
                              ],
                            ),
                          ),
-           ]
+                           Padding(
+                             padding: const EdgeInsets.only(top: 30,left: 2),
+                             child: Row(
+                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                               children: [
+                                 SingleChildScrollView(
+                                   child:IconButton(icon:Icon( Icons.book_online_outlined,color: Colors.white), onPressed: (){
+
+
+                                   },iconSize: 45,),),
+                                 SingleChildScrollView(
+                                   child: IconButton(icon:Icon( Icons.miscellaneous_services,color: Colors.white), onPressed: (){
+
+                                   },iconSize: 45,), ),
+                                 SingleChildScrollView(child:IconButton(icon:Icon( Icons.school_outlined,color: Colors.white), onPressed: (){},iconSize: 45,),),
+
+                               ],
+                             ),
+                           ),
+             ]
+                       ),
                      ),
 
                    ),
                  ),
-               ),
-               HorizontalScrollCards()//ListViewHorizontal.dart
-             ],
+                 HorizontalScrollCards()//ListViewHorizontal.dart
+               ],
 
-           ),
-         ),
+             ),
+            ),
+          ),
         ),
       ),
 

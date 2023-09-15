@@ -3,8 +3,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 class imageSlider extends StatelessWidget {
   final List<String> images = [
-    'images/studentcouncil1.jpg',
-    'images/clubslogos/ids.jpg',
     'images/idscore/bhushanbahale.jpg',
     'images/idscore/nvibhavan.jpg',
     'images/idscore/shrivardhini.jpg',

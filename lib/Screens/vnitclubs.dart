@@ -22,6 +22,7 @@ class VnitClubs extends StatelessWidget {
 
 
   ];
+
   @override
   Widget build(BuildContext context) {
 
@@ -81,7 +82,6 @@ class _ClubCardState extends State<ClubCard> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
-
         elevation: 5,
         child: Container(
           height: 250,
@@ -89,12 +89,13 @@ class _ClubCardState extends State<ClubCard> {
             children: [
               Container(
                 height: 300,
+
                 width: double.infinity,
                 // Replace with your image
                 decoration: BoxDecoration(
+
                   image: DecorationImage(
                     image: AssetImage(widget.clublogos),
-
                   )
                 )
               ),
@@ -107,7 +108,8 @@ class _ClubCardState extends State<ClubCard> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       IconButton(
-                        onPressed: () {
+                        onPressed: (
+                            ) {
                           // Handle info button tap
                         },
                         icon: Icon(Icons.info_outline,size: 30,),

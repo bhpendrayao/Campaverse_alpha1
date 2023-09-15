@@ -5,8 +5,9 @@ class DrawerList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return  SingleChildScrollView(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
          ExpandableMenuList("Notifications", Icons.notification_add_rounded, [
           ListTile(
@@ -30,7 +31,7 @@ class DrawerList extends StatelessWidget {
                ),
 
 
-    ]),
+      ]),
           MenuList("Academic Calender", Icons.calendar_month,(){}),
           MenuList("Sports", Icons.sports_soccer,(){}),
 
@@ -134,7 +135,7 @@ class DrawerList extends StatelessWidget {
 
 
       ]
-      )
+      ),
     );
   }
 }
@@ -151,19 +152,21 @@ class MenuList extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         onTap: onTap,
-        child: Container(
-          height: 60,
-          child: Row(
-            children: [
-              Expanded(child: Icon(icon, size: 20, color: Colors.white)),
-              Expanded(
-                flex: 5,
-                child: Text(
-                  title,
-                  style: TextStyle(color: Colors.white, fontSize: 20,fontWeight: FontWeight.w300),
+        child: SingleChildScrollView(
+          child: SizedBox(
+            height: 40,
+            child: Row(
+              children: [
+                Expanded(child: Icon(icon, size: 20, color: Colors.white)),
+                Expanded(
+                  flex: 5,
+                  child: Text(
+                    title,
+                    style: TextStyle(color: Colors.white, fontSize: 20,fontWeight: FontWeight.w300),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -196,8 +199,8 @@ class _ExpandableMenuListState extends State<ExpandableMenuList> {
                 _isExpanded = !_isExpanded;
               });
             },
-            child: Container(
-              height: 60,
+            child: SizedBox(
+              height: 40,
               child: Row(
                 children: [
                   Expanded(
@@ -219,7 +222,7 @@ class _ExpandableMenuListState extends State<ExpandableMenuList> {
           children: widget.children.map((child) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
-      child: Container(
+      child: SizedBox(
       height: 25,
         // Set your desired height here
       child: child,

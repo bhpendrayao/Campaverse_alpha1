@@ -3,26 +3,40 @@ import 'package:flutter/material.dart';
 class HorizontalScrollCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double sheight=MediaQuery.of(context).size.height;
+    print(sheight);
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          HorizontalCard(
-            imageUrl: 'images/clubslogos/ids.jpg',
-            onTap: () {
-              Navigator.pushNamed(context, '/idspage');
-            },
-          ),
-          HorizontalCard(
-            imageUrl: 'images/studentcouncil1.jpg',
-            onTap: () {
-              Navigator.pushNamed(context, '/studentcouncil');
-            },
+
+          Padding(
+            padding: const EdgeInsets.only(left:75.0,right: 75.0),
+            child: HorizontalCard(
+              imageUrl: 'images/clubslogos/ids.jpg',
+              onTap: () {
+                Navigator.pushNamed(context, '/idspage');
+              },
+            ),
           ),
 
-          HorizontalCard(
-            imageUrl: 'images/axis.jpg',
-            onTap: () {},
+          Padding(
+            padding: const EdgeInsets.only(left:75.0,right: 75.0),
+            child: HorizontalCard(
+              imageUrl: 'images/studentcouncil1.jpg',
+              onTap: () {
+                Navigator.pushNamed(context, '/studentcouncil');
+              },
+            ),
+          ),
+
+          Padding(
+            padding: const EdgeInsets.only(left:75.0,right: 75.0),
+            child: HorizontalCard(
+              imageUrl: 'images/axis.jpg',
+              onTap: () {},
+            ),
           ),
           // HorizontalCard(imageUrl: 'images/arohi,jpg',onTap: (){},),
         ],

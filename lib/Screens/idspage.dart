@@ -7,10 +7,7 @@ class IdsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.black,),
-      extendBodyBehindAppBar: true,
       body: SingleChildScrollView(
-
         child: Container(
           decoration: BoxDecoration(
             gradient: RadialGradient(
@@ -26,7 +23,6 @@ class IdsPage extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(15),
             child: Container(
-
               child: Column(
                 children: [
                   Padding(
@@ -54,11 +50,15 @@ class IdsPage extends StatelessWidget {
                             radius: 70,
                             backgroundImage: AssetImage('images/clubslogos/ids.jpg'),
                           ),
-                          Text("Institute Development Society",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 20,color:Colors.white,shadows:[  Shadow(
-                            offset: Offset(2.0, 2.0),
-                            blurRadius: 2.0,
-                            color: Colors.white,
-                          ),],),),
+                          SizedBox(width: 10,),
+                          Expanded(
+                            child: Container(
+                              child: Text("Institute Development Society",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 20,color:Colors.white,shadows:[  Shadow(
+
+                                color: Colors.white,
+                              ),],),),
+                            ),
+                          ),
 
                         ],
 
@@ -81,9 +81,13 @@ class IdsPage extends StatelessWidget {
                                     ],
                                   ) ,
                                     child: Padding(
-                                      padding: const EdgeInsets.all(12),
-                                      child:Text("We are a tech club specializing in following domains : Web design and development, Game development,Mobile app development, Blockchain development",
-                                      style: TextStyle(color: Colors.white),),
+                                      padding: const EdgeInsets.all(8),
+                                      child:Expanded(
+                                        child: Container(
+                                          child: Text("We are a Tech club Specializing in following domains : Web design and development, Game development,Mobile app development, Blockchain development",
+                                          style: TextStyle(color: Colors.white),),
+                                        ),
+                                      ),
                                     )),
                   Padding(
                     padding: const EdgeInsets.only(top: 30),

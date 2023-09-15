@@ -16,25 +16,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(color: Color(0xFFFFFFFF)),
+        ),
+      ),
+      initialRoute: '/loginScreen',
       routes: {
+        '/loginScreen': (context) => LoginScreen(),
         '/secondScreen': (context) => HomeScreen(),
         '/signUpScreen': (context) => SignUpScreen(),
         '/studentcouncil': (context) => StudentCouncil(),
         '/vnitclubs': (context) => VnitClubs(),
           '/idspage' : (context) => IdsPage(),
       },
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-
-        body: Center(
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: 600, // Set your maximum width here
-            ),
-            child: LoginScreen(), // You can replace this with your main content
-          ),
-        ),
-      ),
     );
   }
 }

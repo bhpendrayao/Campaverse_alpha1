@@ -179,15 +179,14 @@ class FrontCardWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CircleAvatar(
-            radius: 70,
+            radius: 50,
             backgroundColor: Colors.deepPurple,
             backgroundImage: AssetImage(imageUrl),
 
           ),
-          SizedBox(height: 10),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(title, style: TextStyle(fontSize: 15,color: Colors.white)),
+            child: Expanded(child: SizedBox(child: Text(title, style: TextStyle(fontSize: 10,color: Colors.white)))),
           ),
         ],
       ),
