@@ -1,8 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:loginpage/Screens/SecondScreen.dart';
-import 'SecondScreen.dart';
+import 'package:loginpage/Screens/HomeScreen.dart';
 import 'package:loginpage/widgets/MyDrawerHeader.dart';
 import 'package:image_picker/image_picker.dart';
 
