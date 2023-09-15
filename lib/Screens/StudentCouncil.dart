@@ -3,22 +3,21 @@ import 'package:flip_card/flip_card.dart';
 
 class StudentCouncil extends StatelessWidget {
   final List<String> images = [
-    'images/StudentCouncilImages/ZEE_9836 - HRUSHIKESH JADHAV.jpg',
-    'images/StudentCouncilImages/photo (gate) - MT22STR010_VINAYAK.jpg',
-    'images/StudentCouncilImages/IMG_1239 - Minza Shahid.jpg',
-    'images/StudentCouncilImages/WhatsApp Image 2023-08-11 at 2.27.33 PM - BT20MEC002_ADITYA.jpeg',
-    'images/StudentCouncilImages/IMG_20230812_153514 - Dhanesh Choudhary.jpg',
-    'images/StudentCouncilImages/professsional_photo_white_bg - BT20EEE019_Nikhil_Bhisle.jpg',
-    'images/StudentCouncilImages/IMG_7347 - Satyan Patil.jpg',
-    'images/StudentCouncilImages/IMG-20230423-WA0011 - Samruddhi Wagh.jpg',
-    'images/StudentCouncilImages/SAVE_20230811_201702 - GANJI NAYAN.jpg',
-    'images/lr1.jpg',
-        'images/StudentCouncilImages/20230208001610_IMG_2846 - Ayush Chavan.JPG',
-    'images/StudentCouncilImages/SAVE_20220618_154850 - BT20CIV043 Alisha Hatalkar.jpg',
-    'images/StudentCouncilImages/IMG_20230811_180422 - Yashasvi Therkar.jpg',
-    'images/StudentCouncilImages/IMG_20230811_095304 - BT20MEC018 BRAHMANAND Khandale.jpg',
-    'images/StudentCouncilImages/IMG20200719182726 - Gaurav Mishra.jpg'
-
+    'images/StudentCouncilImages/Hrushikesh_Jadhav.jpeg',
+    'images/StudentCouncilImages/MT22STR010_VINAYAK.jpg',
+    'images/StudentCouncilImages/Minza Shahid.jpg',
+    'images/StudentCouncilImages/BT20MEC002_ADITYA.jpeg',
+    'images/StudentCouncilImages/Dhanesh Choudhary.jpg',
+    'images/StudentCouncilImages/Nikhil_Bhisle.jpg',
+    'images/StudentCouncilImages/Satyan Patil.jpg',
+    'images/StudentCouncilImages/Samruddhi Wagh.jpg',
+    'images/StudentCouncilImages/GANJI NAYAN.jpg',
+    'images/StudentCouncilImages/lr1.jpg',
+    'images/StudentCouncilImages/Ayush Chavan.JPG',
+    'images/StudentCouncilImages/Alisha Hatalkar.jpg',
+    'images/StudentCouncilImages/Yashasvi Therkar.jpg',
+    'images/StudentCouncilImages/Bhramanand_khandale.jpeg',
+    'images/StudentCouncilImages/Gaurav Mishra.jpg'
   ];
   final List<String> councilposts = [
     'GENERAL SECRETARY',
@@ -89,25 +88,22 @@ class StudentCouncil extends StatelessWidget {
     '26522',
   ];
 
-
   StudentCouncil() {
     frontWidgets = List.generate(
       councilposts.length,
-          (index) => FrontCardWidget(
+      (index) => FrontCardWidget(
         imageUrl: images[index],
         title: councilposts[index],
       ),
     );
     backWidgets = List.generate(
       councilnames.length,
-          (index) =>
-          BackCardWidget(
-            name : councilnames[index],
-            enrollment: enrollmentno[index],
-            id: idno[index],
-          ),
+      (index) => BackCardWidget(
+        name: councilnames[index],
+        enrollment: enrollmentno[index],
+        id: idno[index],
+      ),
     );
-
   }
 
   late List<Widget> frontWidgets;
@@ -117,9 +113,15 @@ class StudentCouncil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('STUDENT COUNCIL 2023-2024',style: TextStyle(color: Colors.white70),),
-        backgroundColor: Color.fromRGBO(10, 1, 11, 1),elevation: 0,titleSpacing: 2,
-      centerTitle: true,
+      appBar: AppBar(
+        title: Text(
+          'STUDENT COUNCIL 2023-2024',
+          style: TextStyle(color: Colors.white70),
+        ),
+        backgroundColor: Color.fromRGBO(10, 1, 11, 1),
+        elevation: 0,
+        titleSpacing: 2,
+        centerTitle: true,
         leading: Padding(
           padding: const EdgeInsets.all(8),
           child: Image(
@@ -137,7 +139,10 @@ class StudentCouncil extends StatelessWidget {
               Color.fromRGBO(241, 36, 85, 1),
               Color.fromRGBO(9, 15, 21, 1),
             ],
-            stops: [0.17, 0.78], // Corresponding to the percentages in the CSS code
+            stops: [
+              0.17,
+              0.78
+            ], // Corresponding to the percentages in the CSS code
           ),
         ),
         child: Padding(
@@ -167,7 +172,6 @@ class FrontCardWidget extends StatelessWidget {
   final String imageUrl;
   final String title;
 
-
   FrontCardWidget({required this.imageUrl, required this.title});
 
   @override
@@ -182,11 +186,13 @@ class FrontCardWidget extends StatelessWidget {
             radius: 50,
             backgroundColor: Colors.deepPurple,
             backgroundImage: AssetImage(imageUrl),
-
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Expanded(child: SizedBox(child: Text(title, style: TextStyle(fontSize: 10,color: Colors.white)))),
+            child: Expanded(
+                child: SizedBox(
+                    child: Text(title,
+                        style: TextStyle(fontSize: 10, color: Colors.white)))),
           ),
         ],
       ),
@@ -195,29 +201,35 @@ class FrontCardWidget extends StatelessWidget {
 }
 
 class BackCardWidget extends StatelessWidget {
-  final String name ;
-  final String enrollment ;
+  final String name;
+  final String enrollment;
   final String id;
 
-
-   BackCardWidget({super.key, required this.name, required this.enrollment, required this.id});
+  BackCardWidget(
+      {super.key,
+      required this.name,
+      required this.enrollment,
+      required this.id});
   @override
   Widget build(BuildContext context) {
     return Card(
       color: Colors.transparent,
       child: Container(
-
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text( name, style: TextStyle(fontSize: 18,color: Colors.white70,fontWeight: FontWeight.bold)),
+              child: Text(name,
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white70,
+                      fontWeight: FontWeight.bold)),
             ),
             SizedBox(height: 10),
-            Text(enrollment,style: TextStyle(fontSize: 14,color: Colors.white70)),
-            Text(id,style: TextStyle(fontSize: 14,color: Colors.white70)),
-
+            Text(enrollment,
+                style: TextStyle(fontSize: 14, color: Colors.white70)),
+            Text(id, style: TextStyle(fontSize: 14, color: Colors.white70)),
           ],
         ),
       ),
