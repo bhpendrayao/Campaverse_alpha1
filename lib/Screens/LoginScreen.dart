@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loginpage/Screens/HomeScreen.dart';
+import 'package:loginpage/widgets/decoration.dart';
 import 'HomeScreen.dart';
 // this is the loginscreen or the first screen where the user enters
 class LoginScreen extends StatelessWidget {
@@ -12,17 +13,7 @@ class LoginScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
 
-          decoration: BoxDecoration(
-            gradient: RadialGradient(
-              center: Alignment.center,
-              radius: 0.9, // Radius of 1.0 makes it circular
-              colors: [
-                Color.fromRGBO(241, 36, 85, 1),
-                Color.fromRGBO(9, 15, 21, 1),
-              ],
-              stops: [0.17, 0.78], // Corresponding to the percentages in the CSS code
-            ),
-          ),
+          decoration: BackgroundDecoration(),
 
  //this Column includes an array of circle avatar and a container that has textfileds of user login and password
         child:Column(

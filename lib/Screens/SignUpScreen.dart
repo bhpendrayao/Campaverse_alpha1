@@ -1,9 +1,6 @@
 import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:loginpage/Screens/HomeScreen.dart';
-import 'package:loginpage/widgets/MyDrawerHeader.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:loginpage/widgets/decoration.dart';
 
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({super.key});
@@ -29,20 +26,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
         body: SingleChildScrollView(
           child: Container(
-      decoration: BoxDecoration(
-          gradient: RadialGradient(
-            center: Alignment.center,
-            radius: 0.9, // Radius of 1.0 makes it circular
-            colors: [
-              Color.fromRGBO(241, 36, 85, 1),
-              Color.fromRGBO(9, 15, 21, 1),
-            ],
-            stops: [
-              0.17,
-              0.78
-            ], // Corresponding to the percentages in the CSS code
-          ),
-      ),
+      decoration: BackgroundDecoration(),
       child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,

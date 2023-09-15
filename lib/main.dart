@@ -3,6 +3,7 @@ import 'package:loginpage/Screens/HomeScreen.dart';
 import 'package:loginpage/Screens/LoginScreen.dart';
 import 'package:loginpage/Screens/SignUpScreen.dart';
 import 'package:loginpage/Screens/StudentCouncil.dart';
+import 'package:loginpage/Screens/clubs_details.dart';
 import 'package:loginpage/Screens/idspage.dart';
 import 'package:loginpage/Screens/vnitclubs.dart';
 
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         '/loginscreen':(context)=>LoginScreen(),
         '/studentcouncil': (context) => StudentCouncil(),
         '/vnitclubs': (context) => VnitClubs(),
-          '/idspage' : (context) => IdsPage(),
+        '/idspage' : (context) => IdsPage(),
+        '/clubdetails' :(context) => Club(),
       },
       debugShowCheckedModeBanner: false,
 

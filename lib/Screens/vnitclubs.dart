@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginpage/widgets/decoration.dart';
 
 class VnitClubs extends StatelessWidget {
   final List<String> clublogos = [
@@ -11,60 +12,48 @@ class VnitClubs extends StatelessWidget {
     'images/clubslogos/octaves.jpg',
     'images/clubs/groves.jpg',
     'images/clubs/cyclistsofvnit.jpg',
-        'images/clubs/clubcapture.jpg',
-        'images/clubs/quiz.jpg',
-        'images/clubs/savvad.jpg',
-        'images/clubs/shell.jpg',
-        'images/clubs/studentChapter.jpg',
-        'images/clubs/teamvelocitry.jpg',
+    'images/clubs/clubcapture.jpg',
+    'images/clubs/quiz.jpg',
+    'images/clubs/savvad.jpg',
+    'images/clubs/shell.jpg',
+    'images/clubs/studentChapter.jpg',
+    'images/clubs/teamvelocitry.jpg',
     'images/clubs/tesla.jpg'
-
-
-
   ];
 
   @override
   Widget build(BuildContext context) {
-
-      return Scaffold(
-        appBar: AppBar(
-
-          title: Text('VNIT CLUBS '),
-
-          centerTitle: true,
-          backgroundColor: Color.fromRGBO(10, 1, 11, 1),
-        ),
-
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: RadialGradient(
-              center: Alignment.center,
-              radius: 0.9, // Radius of 1.0 makes it circular
-              colors: [
-                Color.fromRGBO(241, 36, 85, 1),
-                Color.fromRGBO(9, 15, 21, 1),
-              ],
-              stops: [0.17, 0.78], // Corresponding to the percentages in the CSS code
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('VNIT CLUBS '),
+        centerTitle: true,
+        backgroundColor: Color.fromRGBO(10, 1, 11, 1),
+      ),
+      body: Container(
+        decoration: BackgroundDecoration(),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 1,
           ),
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 1,
-            ),
-            itemCount: 16,
-            itemBuilder: (context, index) {
-              return ClubCard(clublogos: clublogos[index],);
-            },
-          ),
+          itemCount: 16,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: EdgeInsets.all(10.0),
+              child: ClubCard(
+                clublogos: clublogos[index],
+              ),
+            );
+          },
         ),
-      );
-
+      ),
+    );
   }
 }
+
 class ClubCard extends StatefulWidget {
-  final String clublogos ;
+  final String clublogos;
   ClubCard({required this.clublogos});
-   @override
+  @override
   _ClubCardState createState() => _ClubCardState();
 }
 
@@ -87,36 +76,35 @@ class _ClubCardState extends State<ClubCard> {
           height: 250,
           child: Column(
             children: [
-              Container(
-                height: 300,
-
-                width: double.infinity,
-                // Replace with your image
-                decoration: BoxDecoration(
-
-                  image: DecorationImage(
-                    image: AssetImage(widget.clublogos),
-                  )
-                )
+              Expanded(
+                flex: 12,
+                child: Container(
+                    width: double.infinity,
+                    // Replace with your image
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                      image: AssetImage(widget.clublogos),
+                    ))),
               ),
               Expanded(
-
+                flex: 6,
                 child: Container(
-                  height: 10,
-                  color:  Color.fromRGBO(241, 50, 90, 1),
+                  color: Color.fromRGBO(241, 50, 90, 1),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       IconButton(
-                        onPressed: (
-                            ) {
-                          // Handle info button tap
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/clubdetails');
                         },
-                        icon: Icon(Icons.info_outline,size: 30,),
+                        icon: Icon(
+                          Icons.info_outline,
+                          size: 30,
+                        ),
                       ),
                       Row(
                         children: [
-                          Icon(Icons.people,size: 30),
+                          Icon(Icons.people, size: 30),
                           SizedBox(width: 4),
                           Text('1000'), // Replace with follower count
                         ],
@@ -124,9 +112,13 @@ class _ClubCardState extends State<ClubCard> {
                       ElevatedButton(
                         onPressed: _toggleFollow,
                         style: ElevatedButton.styleFrom(
-                          primary: _isFollowing ? Colors.grey :Color.fromRGBO(28, 7, 81, 1),
+                          primary: _isFollowing
+                              ? Colors.grey
+                              : Color.fromRGBO(28, 7, 81, 1),
                         ),
-                        child: Text(_isFollowing ? 'Added Stars' : 'Add Stars to your account'),
+                        child: Text(_isFollowing
+                            ? 'Added Galaxy points'
+                            : 'Add Galaxy points to your account'),
                       ),
                     ],
                   ),
@@ -139,4 +131,3 @@ class _ClubCardState extends State<ClubCard> {
     );
   }
 }
-

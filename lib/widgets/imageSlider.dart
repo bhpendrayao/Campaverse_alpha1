@@ -8,16 +8,14 @@ class imageSlider extends StatelessWidget {
     'images/idscore/shrivardhini.jpg',
     'images/idscore/vanshikarajput.jpg',
     'images/idscore/yashgaikwad.jpg'
-
   ];
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       width: double.infinity,
       height: 300,
       child: CarouselSlider(
-
         items: images.map((imagePath) {
           return Image.asset(
             imagePath,
@@ -25,18 +23,13 @@ class imageSlider extends StatelessWidget {
           );
         }).toList(),
         options: CarouselOptions(
-
-            autoPlay: true,
-
-            autoPlayInterval: Duration(seconds: 2),
-            aspectRatio: 16 / 9,
-            enlargeCenterPage: true,
-
-
-
-
+          autoPlay: true,
+          autoPlayInterval: Duration(seconds: 2),
+          aspectRatio: 16 / 9,
+          enlargeCenterPage: true,
         ),
-      ),);
+      ),
+    );
   }
 }
 
@@ -45,13 +38,11 @@ class imageSlider2 extends StatelessWidget {
     'images/workshopimages/hackathon.jpg',
     'images/workshopimages/workshop1.jpg',
     'images/workshopimages/workshop2.jpg'
-
-
   ];
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       width: double.infinity,
       height: 300,
       child: CarouselSlider(
@@ -63,10 +54,10 @@ class imageSlider2 extends StatelessWidget {
         }).toList(),
         options: CarouselOptions(
             autoPlay: true,
-            autoPlayInterval: Duration(seconds: 2),
+            autoPlayInterval: Duration(seconds: 3),
             aspectRatio: 16 / 9,
-            enlargeCenterPage: true
-        ),
-      ),);
+            enlargeCenterPage: true),
+      ),
+    );
   }
 }

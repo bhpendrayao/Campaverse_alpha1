@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginpage/widgets/decoration.dart';
 import 'package:loginpage/widgets/imageSlider.dart';
 class IdsPage extends StatelessWidget {
   const IdsPage({super.key});
@@ -8,17 +9,7 @@ class IdsPage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          decoration: BoxDecoration(
-            gradient: RadialGradient(
-              center: Alignment.center,
-              radius: 0.9, // Radius of 1.0 makes it circular
-              colors: [
-                Color.fromRGBO(241, 36, 85, 1),
-                Color.fromRGBO(9, 15, 21, 1),
-              ],
-              stops: [0.17, 0.78], // Corresponding to the percentages in the CSS code
-            ),
-          ),
+          decoration: BackgroundDecoration(),
           child: Padding(
             padding: const EdgeInsets.all(15),
             child: Container(
@@ -27,10 +18,8 @@ class IdsPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Container(
-
                       height: 200,
                       decoration: BoxDecoration(
-
                         color: Colors.black26.withOpacity(0.1), // Opacity value (0.5) for semi-transparency
                         borderRadius: BorderRadius.circular(50), // Rounded corners
                         boxShadow: [
@@ -54,7 +43,6 @@ class IdsPage extends StatelessWidget {
                             child: SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Text("Institute Development Society",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 20,color:Colors.white,shadows:[  Shadow(
-
                                 color: Colors.white,
                               ),],),),
                             ),
@@ -88,7 +76,7 @@ class IdsPage extends StatelessWidget {
                                           style: TextStyle(color: Colors.white),),
                                         ),
                                       ),
-                                    )),
+                                    ),),
                   Padding(
                     padding: const EdgeInsets.only(top: 30),
                     child: Column(
@@ -99,7 +87,6 @@ class IdsPage extends StatelessWidget {
                           color: Colors.grey,
                         ),],fontWeight: FontWeight.bold,fontSize: 22),),
                         imageSlider2(),
-
                       ],
                     ),
                   ),
