@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:loginpage/widgets/ListViewHorizontal.dart';
 import 'package:loginpage/widgets/imageSlider.dart';
 class IdsPage extends StatelessWidget {
   const IdsPage({super.key});
@@ -52,7 +51,8 @@ class IdsPage extends StatelessWidget {
                           ),
                           SizedBox(width: 10,),
                           Expanded(
-                            child: Container(
+                            child: SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
                               child: Text("Institute Development Society",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 20,color:Colors.white,shadows:[  Shadow(
 
                                 color: Colors.white,

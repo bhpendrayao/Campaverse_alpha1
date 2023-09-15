@@ -11,13 +11,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double sheight=MediaQuery.of(context).size.height;
     return Scaffold(
       drawer:Expanded(
         child: SingleChildScrollView(
           child: Container(
             //this container has the background gradient of drawer
 
-            width: MediaQuery.of(context).size.width * 0.6,
+            width: MediaQuery.of(context).size.width * 0.8,
             decoration: BoxDecoration(
               gradient: RadialGradient(
                 center: Alignment.center,
@@ -29,9 +30,9 @@ class HomeScreen extends StatelessWidget {
                 stops: [0.17, 0.78], // Corresponding to the percentages in the CSS code
               ),
             ),
-            child: SingleChildScrollView(
-              child: Container(
-
+            child: Container(
+              height: sheight,
+              child: SingleChildScrollView(
                 child: Column(
                   children: [
                     //my drawerheader would redirect you to a container where there is image of user and name and enrollment no
@@ -72,11 +73,11 @@ class HomeScreen extends StatelessWidget {
         ),
 
 
-       child: Container(
+       child: SingleChildScrollView(
          child: Column(
            children: [
 
-             
+
              Padding(
                padding: const EdgeInsets.all(50),
                child: Padding(

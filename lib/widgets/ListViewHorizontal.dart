@@ -4,7 +4,6 @@ class HorizontalScrollCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double sheight=MediaQuery.of(context).size.height;
-    print(sheight);
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
@@ -72,7 +71,6 @@ class HorizontalCard extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           child: Card(
-            margin: EdgeInsets.all(16.0),
             child: Container(
               width: 200.0, // Adjust card width as needed
               height: 200.0, // Adjust card height as needed
