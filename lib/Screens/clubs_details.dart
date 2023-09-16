@@ -40,53 +40,53 @@ class ClubNumbers extends StatelessWidget {
                   radius: 30,
                   backgroundColor: Color(0xff650707).withOpacity(0.8),
                 ),
-                SizedBox(
-                  width: 20,
-                ),
-                Text(
-                  "CLUB NAME",
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 30,
-                    color: Colors.white,
+                Padding(
+                  padding: const EdgeInsets.only(left: 15.0),
+                  child: Text(
+                    "CLUB NAME",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 30,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              "Club Description",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 25.0),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              "WORKSHOPS AND EVENTS",
-              style: TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.bold, fontSize: 22),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              "CORE MEMBERS",
-              style: TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text('MERCHANDISE',
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Text(
+                "Club Description",
                 style: TextStyle(
-                    color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 25)),
+                    color: Colors.white,
+                    fontSize: 25.0),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top:20.0),
+              child: Text(
+                "WORKSHOPS AND EVENTS",
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold, fontSize: 22),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top:20.0),
+              child: Text(
+                "CORE MEMBERS",
+                style: TextStyle(
+                    color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top:20.0),
+              child: Text('MERCHANDISE',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25)),
+            ),
           ],
         ),
       ),

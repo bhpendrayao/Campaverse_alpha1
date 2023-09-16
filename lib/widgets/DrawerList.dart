@@ -9,9 +9,8 @@ class DrawerList extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-         ExpandableMenuList("Notifications", Icons.notification_add_rounded, [
-          ListTile(
-
+          ExpandableMenuList("Notifications", Icons.notification_add_rounded, [
+           ListTile(
           title: Text("Notification 1",style: TextStyle(color: Colors.white70),),
              onTap: () {
            // Handle onTap for Notification 1
@@ -23,18 +22,47 @@ class DrawerList extends StatelessWidget {
                // Handle onTap for Notification 1
              },
            ),
-            ListTile(
+           ListTile(
             title: Text("Notification 2",style: TextStyle(color: Colors.white70)),
              onTap: () {
                 // Handle onTap for Notification 2
                     },
                ),
-
-
-      ]),
-          MenuList("Academic Calender", Icons.calendar_month,(){}),
-          MenuList("Sports", Icons.sports_soccer,(){}),
-
+         ]),
+          ExpandableMenuList("Academic Calender", Icons.calendar_month,[
+            ListTile(
+              title: Text("Higher Years Calender",style: TextStyle(color: Colors.white70),),
+              onTap: () {
+                // Handle onTap for Notification 1
+              },
+            ),
+            ListTile(
+              title: Text("First Year Calender",style: TextStyle(color: Colors.white70),),
+              onTap: () {
+                // Handle onTap for Notification 1
+              },
+            ),
+          ]),
+          ExpandableMenuList("Sports", Icons.sports_soccer,[
+            ListTile(
+              title: Text("Institute Gathering",style: TextStyle(color: Colors.white70),),
+              onTap: () {
+                // Handle onTap for Notification 1
+              },
+            ),
+            ListTile(
+              title: Text("Inter NIT",style: TextStyle(color: Colors.white70),),
+              onTap: () {
+                // Handle onTap for Notification 1
+              },
+            ),
+            ListTile(
+              title: Text("Other Sports Events",style: TextStyle(color: Colors.white70),),
+              onTap: () {
+                // Handle onTap for Notification 1
+              },
+            ),
+          ]),
           ExpandableMenuList('Student Council Notices', Icons.speaker_notes, [
             ListTile(
 
@@ -45,17 +73,10 @@ class DrawerList extends StatelessWidget {
                 // Handle onTap for Notification 1
               },
             ),
-
             ListTile(
               title: Text("Achievements",style: TextStyle(color: Colors.white70)),
               onTap: () {
                 // Handle onTap for Notification 1
-              },
-            ),
-            ListTile(
-              title: Text("Inter Nit Tournaments",style: TextStyle(color: Colors.white70)),
-              onTap: () {
-                // Handle onTap for Notification 2
               },
             ),
             ListTile(
@@ -70,12 +91,8 @@ class DrawerList extends StatelessWidget {
                 // Handle onTap for Notification 2
               },
             ),
-
-
           ]),
-
-
-      ExpandableMenuList("Acedemic Section", Icons.notification_add_rounded, [
+          ExpandableMenuList("Acedemic Section", Icons.notification_add_rounded, [
         ListTile(
 
           title: Text("ARCHITECTURE AND PLANNING",style: TextStyle(color: Colors.white70),),
@@ -83,7 +100,6 @@ class DrawerList extends StatelessWidget {
             // Handle onTap for Notification 1
           },
         ),
-
         ListTile(
           title: Text("COMPUTER SCIENCE AND ENGINEERING",style: TextStyle(color: Colors.white70)),
           onTap: () {
@@ -125,20 +141,42 @@ class DrawerList extends StatelessWidget {
           onTap: () {
             // Handle onTap for Notification 2
           },
-        )],
-      ),
-
-        MenuList("Recruitments", Icons.model_training,(){}),
-          MenuList("Services", Icons.medical_services_outlined,(){}),
+        )],),
+          ExpandableMenuList("Recruitments", Icons.model_training,[
+            ListTile(
+              title: Text("Club Recruitments",style: TextStyle(color: Colors.white70),),
+              onTap: () {
+                // Handle onTap for Notification 1
+              },
+            ),
+            ListTile(
+              title: Text("Event Managers",style: TextStyle(color: Colors.white70),),
+              onTap: () {
+                // Handle onTap for Notification 1
+              },
+            ),
+          ]),
+          ExpandableMenuList("Services", Icons.medical_services_outlined,[
+            ListTile(
+              title: Text("Hospital",style: TextStyle(color: Colors.white70),),
+              onTap: () {
+                // Handle onTap for Notification 1
+              },
+            ),
+            ListTile(
+              title: Text("Mess",style: TextStyle(color: Colors.white70),),
+              onTap: () {
+                // Handle onTap for Notification 1
+              },
+            ),
+          ]),
           MenuList("Settings", Icons.settings,(){}),
-
-
-
       ]
       ),
     );
   }
 }
+
 class MenuList extends StatelessWidget {
   final String title;
   final IconData icon;
@@ -173,6 +211,7 @@ class MenuList extends StatelessWidget {
     );
   }
 }
+
 class ExpandableMenuList extends StatefulWidget {
   final String title;
   final IconData icon;
@@ -236,6 +275,7 @@ class _ExpandableMenuListState extends State<ExpandableMenuList> {
     );
   }
 }
+
 class MyListtile extends StatelessWidget {
   final String mytitle;
   final VoidCallback onTap;

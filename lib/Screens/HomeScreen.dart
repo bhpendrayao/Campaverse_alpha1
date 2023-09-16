@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginpage/Screens/basicpages.dart';
 import 'package:loginpage/widgets/DrawerList.dart';
 import 'package:loginpage/widgets/ListViewHorizontal.dart';
 import 'package:loginpage/widgets/MyDrawerHeader.dart';
@@ -25,9 +26,7 @@ class HomeScreen extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    //my drawerheader would redirect you to a container where there is image of user and name and enrollment no
                     MyDrawerHeader(updateDrawerHeader: _updateDrawerHeader),
-                    //Drawer list has al the notifications ad list of the things
                     DrawerList(),
                   ],
                 ),
@@ -57,20 +56,7 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: Container(
-        decoration: BoxDecoration(
-          gradient: RadialGradient(
-            center: Alignment.center,
-            radius: 0.9, // Radius of 1.0 makes it circular
-            colors: [
-              Color.fromRGBO(241, 36, 85, 1),
-              Color.fromRGBO(9, 15, 21, 1),
-            ],
-            stops: [
-              0.17,
-              0.78
-            ], // Corresponding to the percentages in the CSS code
-          ),
-        ),
+        decoration: BackgroundDecoration(),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -108,7 +94,12 @@ class HomeScreen extends StatelessWidget {
                                     Icons.event_note_outlined,
                                     color: Colors.white,
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => const NoticeBoard()),
+                                    );
+                                  },
                                   iconSize: 30,
                                 ),
                                 IconName: "NoticeBoard"),
